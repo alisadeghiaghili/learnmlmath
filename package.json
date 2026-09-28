@@ -1,0 +1,17 @@
+{
+  "name": "learnmlmath",
+  "version": "0.1.0",
+  "description": "Interactive ML math visualization sandbox and tutorial game",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test tests/**/*.test.js",
+    "lint": "node --check src/engine/linalg.js && node --check src/engine/engine.js && node --check src/engine/commands.js"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

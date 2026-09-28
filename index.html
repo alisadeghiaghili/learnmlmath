@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LearnMLMath</title>
+    <meta
+      name="description"
+      content="Interactive ML math visualization sandbox and tutorial game"
+    />
+    <link rel="stylesheet" href="/src/style/main.css" />
+  </head>
+  <body>
+    <div id="interfaceWrapper" class="layout">
+      <section id="controls" class="panel terminal-panel" aria-label="Terminal">
+        <header class="window-chrome">
+          <div class="traffic">
+            <span class="dot close"></span>
+            <span class="dot min"></span>
+            <span class="dot plus"></span>
+          </div>
+          <div class="title">LearnMLMath — terminal</div>
+        </header>
+        <div id="levelToolbar" class="level-toolbar" hidden></div>
+        <div id="terminal" class="terminal-scroll" aria-live="polite"></div>
+        <form id="commandForm" class="command-bar" autocomplete="off">
+          <span class="prompt-sign">$</span>
+          <input
+            id="commandInput"
+            type="text"
+            spellcheck="false"
+            autocapitalize="off"
+            autocorrect="off"
+            aria-label="Command input"
+          />
+        </form>
+      </section>
+
+      <section id="mainVisSpace" class="panel vis-panel" aria-label="Visualization">
+        <header class="window-chrome">
+          <div class="traffic">
+            <span class="dot close"></span>
+            <span class="dot min"></span>
+            <span class="dot plus"></span>
+          </div>
+          <div class="title" id="visTitle">workspace</div>
+        </header>
+        <div class="vis-body">
+          <canvas id="visCanvas" width="900" height="560"></canvas>
+          <div id="visLegend" class="vis-legend"></div>
+        </div>
+      </section>
+
+      <aside id="goalPanel" class="panel goal-panel" aria-label="Goal">
+        <header class="window-chrome">
+          <div class="traffic">
+            <span class="dot close" id="goalClose"></span>
+            <span class="dot min"></span>
+            <span class="dot plus"></span>
+          </div>
+          <div class="title">Goal</div>
+        </header>
+        <div class="goal-body">
+          <h1 id="goalTitle">Sandbox</h1>
+          <div id="goalText" class="goal-text"></div>
+          <div id="goalStatus" class="goal-status"></div>
+          <div class="goal-actions">
+            <button type="button" id="btnHint" class="btn">Hint</button>
+            <button type="button" id="btnSolution" class="btn">Solution</button>
+            <button type="button" id="btnLevels" class="btn btn-accent">Levels</button>
+            <button type="button" id="btnReset" class="btn">Reset</button>
+          </div>
+          <div id="golfScore" class="golf"></div>
+        </div>
+      </aside>
+    </div>
+
+    <nav id="helperBar" class="helper-bar" aria-label="Command shortcuts">
+      <button type="button" data-cmd="help">help</button>
+      <button type="button" data-cmd="ls">ls</button>
+      <button type="button" data-cmd="levels">levels</button>
+      <button type="button" data-cmd="goal">goal</button>
+      <button type="button" data-cmd="hint">hint</button>
+      <button type="button" data-cmd="undo">undo</button>
+      <button type="button" data-cmd="reset">reset</button>
+      <button type="button" data-cmd="vec a 3 4">vec a 3 4</button>
+      <button type="button" data-cmd="dot a b d">dot</button>
+      <button type="button" data-cmd="field quad">field quad</button>
+      <button type="button" data-cmd="grad">grad</button>
+      <button type="button" data-cmd="step 0.1">step</button>
+      <button type="button" data-cmd="train 20 0.1">train</button>
+    </nav>
+
+    <div id="modalRoot" class="modal-root" hidden></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
